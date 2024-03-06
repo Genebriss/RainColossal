@@ -2,6 +2,7 @@ VFX graph simulates raindrops sliding down, this is rendered by an extra camera 
 This shader constructs normal map of droplets from the grayscale texture. Which is the main bottleneck.
 
 To optimize this, I would render this VFX into a sprite sheet and produce normal map of it offline. Then the effect would be free but no longer procedural.
+Alternatively, it's possible to create this VFX with normals and render them as color to pass into a shader as is.
 I'm also sampling this render texture twice for normals and twice for smoothness to improve tiling. But this is not essential and can be freely removed.
 I've solved obvious vertical tiling by adding a black gradient frame in the vfx graph.
 
